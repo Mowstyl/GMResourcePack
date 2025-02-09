@@ -10,7 +10,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>3.1.2</version>
+                <version>3.4.2</version>
                 <configuration>
                     <archive>
                         <manifest>
@@ -19,7 +19,7 @@
                             <mainClass>notegen.NoteGen</mainClass>
                         </manifest>
                         <manifestEntries>
-                            <Class-Path>. lib/jfugue-5.0.9.jar</Class-Path>
+                            <Class-Path>.lib/jfugue-5.0.9.jar</Class-Path>
                         </manifestEntries>
                     </archive>
                 </configuration>
@@ -27,7 +27,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
-                <version>3.1.1</version>
+                <version>3.8.1</version>
                 <executions>
                     <execution>
                         <id>copy-dependencies</id>
@@ -43,14 +43,19 @@
             </plugin>
         </plugins>
     </build>
+    <repositories>
+        <repository>
+            <id>sing-group</id>
+            <name>SingGroup</name>
+            <url>https://maven.sing-group.org/repository/maven/</url>
+        </repository>
+    </repositories>
     <dependencies>
         <!--JFugue-->
         <dependency>
            <groupId>jfugue</groupId>
            <artifactId>jfugue</artifactId>
            <version>5.0.9</version>
-           <scope>system</scope>
-           <systemPath>${project.basedir}/localrepo/jfugue-5.0.9.jar</systemPath>
         </dependency>
     </dependencies>
 </project>
